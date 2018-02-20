@@ -1,0 +1,14 @@
+// This is the final documentation for the application accompanying the thesis: "Cloud based community health app for small scale health enterprises". "A Covenant University Community Health Impact Project"
+=====================================================================================
+
+The Administrator and Client User Modules
+-----------------------------
+
+== Setup the Database and Admin Routes
+== The Admin Module:
+
+Controllers
+
+Final Sprint:
+
+18/2/18: Setup the Assets and Modify already existing pages

@@ -1,0 +1,9 @@
+/*
+	This is for alternatives that cannot be directly placed on the file
+*/
+
+.landingsplash{
+	background: url('../../images/landing/landing2.jpg');
+	background-position: center;
+	overflow: visible;
+}
