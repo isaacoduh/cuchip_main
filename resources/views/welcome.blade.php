@@ -69,7 +69,7 @@
 
             .container{
                 width: 500px;
-                height: 400px;
+                min-height: 400px;
                 text-align: center;
                 margin: 0 auto;
                 background-color:rgba(52,73,94,0.9);
