@@ -18,7 +18,8 @@
                 /*color: #636b6f;*/
                 color:#fff;
                 background-repeat: no-repeat;
-                background-size: 100% 720px;
+                /*background-size: 100% 720px;*/
+                background-size: auto;
                 font-family: 'Raleway', sans-serif;
                 font-weight: 100;
                 height: 100vh;
