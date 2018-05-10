@@ -7,7 +7,7 @@
 
     {{-- Breadcrumb --}}
     <ol class="breadcrumb">
-        <li><a href="#"><i class="demo-pli-home"></i></a></li>
+        <li><a href="/clientdashboard"><i class="demo-pli-home"></i></a></li>
         <li class="active">{{$client->name}}'s Dashboard</li>
     </ol>
     {{-- End breadcrumb --}}

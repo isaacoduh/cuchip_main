@@ -38,5 +38,15 @@ class Client extends Authenticatable
     public function users(){
         return $this->hasMany(User::class);
     }
+
+    public function casefiles(){
+        return $this->hasMany(Casefile::class);
+    }
+
+    public function birthcases(){
+        return $this->hasMany(BirthCase::class);
+    }
+
+    
 }
 

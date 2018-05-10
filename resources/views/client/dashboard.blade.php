@@ -36,7 +36,9 @@
                                         </div>
                                     </div> 
                                     <a class="btn btn-pink mar-ver" href="/clientprofile">View Details</a>  
-
+                                    {{-- <a class="btn btn-pink mar-ver" href="{{url('casefiles')}}">Casefiles</a> --}}
+                                    <a class="btn btn-pink mar-ver" href="/client/casefiles">Casefiles</a>
+                                    <a href="/client/birthcases" class="btn btn-primary mar-ver">Birthcases</a>  
                                 </div>
                             </div>
                         </div>
@@ -51,15 +53,15 @@
                                 <div class="col-sm-3 col-lg-6">
                                     <div class="panel panel-primary panel-colorful">
                                         <div class="pad-all text-center">
-                                            <span class="text-3x text-thin">53</span>
+                                            <span class="text-3x text-thin">{{count($casefiles)}}</span>
                                             <p>Casefiles</p>
                                             <i class="demo-pli-file-add icon-lg"></i>
                                         </div>
                                     </div>
                                     <div class="panel panel-warning panel-colorful">
                                         <div class="pad-all text-center">
-                                            <span class="text-3x text-thin">68</span>
-                                            <p>Appointments</p>
+                                            <span class="text-3x text-thin">{{count($birthcases)}}</span>
+                                            <p>Birthcases</p>
                                             <i class="demo-psi-clock icon-lg"></i>
                                         </div>
                                     </div>
@@ -67,20 +69,20 @@
                                 <div class="col-sm-3 col-lg-6">
                                     <div class="panel panel-purple panel-colorful">
                                         <div class="pad-all text-center">
-                                            <span class="text-3x text-thin">32</span>
+                                            <span class="text-3x text-thin">{{count($users)}}</span>
                                             <p>Staff</p>
                                             <i class="demo-pli-coding"></i>
                                         </div>
                                     </div>
                                     <div class="panel panel-dark panel-colorful">
                                         <div class="pad-all text-center">
-                                            <span class="text-3x text-thin">12</span>
-                                            <p>Reports</p>
+                                            <span class="text-3x text-thin">{{count($birthcases)}}</span>
+                                            <p>Vaccination Reports</p>
                                             <i class="demo-psi-receipt-4 icon-lg"></i>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-sm-6 col-lg-12">
+                                {{-- <div class="col-sm-6 col-lg-12">
                                     <div class="panel">
                                         <div class="panel-body text-center">
                                             <img alt="Profile Picture" class="img-lg img-circle mar-btm" src="img/profile-photos/5.png">
@@ -92,7 +94,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                </div> --}}
                             </div>
                         </div>
                         <div class="col-lg-9">
@@ -102,11 +104,11 @@
                                         <table class="table table-vcenter mar-top">
                                             <thead>
                                                 <tr>
-                                                    <th class="min-w-td">#</th>
-                                                    <th class="min-w-td">Case</th>
-                                                    <th>Full Name</th>
+                                                    <th class="min-w-td">Staff</th>
+                                                    <th class="min-w-td">Role</th>
                                                     <th>Email</th>
-                                                    <th>Status</th>
+                                                    {{-- <th>Email</th>
+                                                    <th>Status</th> --}}
                                                     <th class="text-center">Actions</th>
                                                 </tr>
                                             </thead>
@@ -143,27 +145,33 @@
                                                 <tr>
                                                     <th class="min-w-td">#</th>
                                                     <th class="min-w-td">Case</th>
-                                                    <th>Full Name</th>
-                                                    <th>Email</th>
-                                                    <th>Status</th>
+                                                    <th>Patient Name</th>
+                                                    <th>Gender</th>
+                                                    <th>Contact Info</th>
+                                                    <th>Emergency</th>
                                                     <th class="text-center">Actions</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                @if(count($users))
-                                                    @foreach($users as $row)
+                                                @if(count($casefiles))
+                                                    <?php $count = 1; ?>
+                                                    @foreach($casefiles as $row)
                                                         <tr>
-                                                            <td>{{$row->name}}</td>
-                                                            <td>{{$row->role}}</td>
-                                                            <td>{{$row->email}}</td>
+                                                            <td>{{$count}}</td>
+                                                            <td>{{$row->casefile_id}}</td>
+                                                            <td>{{$row->patient_name}}</td>
+                                                            <td>{{$row->sex}}</td>
+                                                            <td>{{$row->contact}}</td>
+                                                            <td>{{$row->emergency_contact}}</td>
                                                             <td class="text-center">
-                                                            <div class="btn-group">
-                                                                <a class="btn btn-sm btn-default btn-hover-success demo-psi-pen-5 add-tooltip" href="#" data-original-title="Edit" data-container="body"></a>
-                                                                <a class="btn btn-sm btn-default btn-hover-danger demo-pli-trash add-tooltip" href="#" data-original-title="Delete" data-container="body"></a>
-                                                                <a class="btn btn-sm btn-default btn-hover-warning demo-pli-unlock add-tooltip" href="#" data-original-title="Ban user" data-container="body"></a>
-                                                            </div>
-                                                        </td>
+                                                                <div class="btn-group">
+                                                                    <a class="btn btn-sm btn-default btn-hover-success demo-psi-pen-5 add-tooltip" href="#" data-original-title="Edit" data-container="body"></a>
+                                                                    <a class="btn btn-sm btn-default btn-hover-danger demo-pli-trash add-tooltip" href="#" data-original-title="Delete" data-container="body"></a>
+                                                                    <a class="btn btn-sm btn-default btn-hover-warning demo-pli-unlock add-tooltip" href="#" data-original-title="Ban user" data-container="body"></a>
+                                                                </div>
+                                                            </td>
                                                         </tr>
+                                                        <?php $count++; ?>
                                                     @endforeach
                                                 @else
                                                     <p class="lead">No Users Registered</p>

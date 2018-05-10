@@ -5,7 +5,8 @@ namespace App\Http\Controllers;
 
 use App\User;
 use App\Client;
-
+use App\Casefile;
+use App\BirthCase;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Auth;
@@ -29,10 +30,13 @@ class ClientController extends Controller
     {
         $client = Auth::guard('client')->user()->id;
         $users = Client::find($client)->users;
+        $casefiles = Client::find($client)->casefiles;
+        $birthcases = Client::find($client)->birthcases;
+        // $birthcases = $this->getBirthcases($client);
         $today = date('d/m/Y');
         $clients = Client::paginate(10);
         
-        return view('client.dashboard', array('client' => Auth::guard('client')->user(), 'users' => $users, 'today' => $today));
+        return view('client.dashboard', array('client' => Auth::guard('client')->user(), 'users' => $users,'casefiles' => $casefiles, 'birthcases' => $birthcases, 'today' => $today));
 
     }
 
@@ -142,4 +146,14 @@ class ClientController extends Controller
     {
         //
     }
+
+    public function getCasefiles($id){
+        $casefiles = Casefile::client_id($id)->get();
+    }
+
+    public function getBirthcases($id){
+        $birthcases = BirthCase::client_id($id)->get();
+    }
+
+    
 }

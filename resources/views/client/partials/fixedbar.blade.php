@@ -7,7 +7,7 @@
                     <span class="pad-ver text-main text-sm text-uppercase text-bold">{{$client->name}}</span>
                     <p class="text-sm">{{$today}}</p>
                     <p class="text-2x text-main"></p>
-                    <button class="btn btn-block btn-info mar-top" href="/clientlogout">Logout</button>
+                    <a href="/clientlogout" class="btn btn-block btn-info mar-top">Logout</a>
                 </div>
                 <hr class="new-section-xs">
                 <div class="pad-hor">

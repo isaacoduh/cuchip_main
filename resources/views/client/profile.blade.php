@@ -106,10 +106,11 @@
 						                                                    </tr>
 
 						                                                @endforeach
-						                                                {{$users->links()}}
+						                                                
 						                                            @else
 						                                                <p class="lead">No Users Registered</p>
 						                                            @endif
+                                                                    {{-- {{$users->links()}} --}}
                                                                 </tbody>
                                                             </table>
                                                             <hr>

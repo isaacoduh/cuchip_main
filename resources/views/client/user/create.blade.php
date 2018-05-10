@@ -137,7 +137,7 @@
                                                         </div>
 
                                                         <div class="form-group{{ $errors->has('bio') ? ' has-error' : '' }}">
-                                                            <label for="role" class="col-md-4 control-label">Role</label>
+                                                            <label for="role" class="col-md-4 control-label">Bio</label>
                                                             <div class="col-md-6">
                                                                 <textarea class="form-control" placeholder="Your Bio" id="bio" name="bio" rows="10">{{old('bio')}}</textarea>
 

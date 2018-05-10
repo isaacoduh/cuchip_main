@@ -12,3 +12,12 @@ Controllers
 Final Sprint:
 
 18/2/18: Setup the Assets and Modify already existing pages
+
+21/02/18 1:00am - 
+-- Create the casefile model --> this will carter to the casefile. :-> php artisan make:model Case -m, this will also create the migration file.
+-- Build the casefile table and connect the relevant models, 
+-- Run the migration.
+-- 
+
+
+24/2/18: Going to have to start keeping track of both Client Routes and User Routes;
