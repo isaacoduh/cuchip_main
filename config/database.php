@@ -56,11 +56,11 @@ return [
 
         'mysql' => [
             'driver' => 'mysql',
-            'host' => env('DB_HOST', 'db4free.net'),
+            'host' => env('DB_HOST', 'ou6zjjcqbi307lip.cbetxkdyhwsb.us-east-1.rds.amazonaws.com'),
             'port' => env('DB_PORT', '3306'),
-            'database' => env('DB_DATABASE', 'cuchipdb'),
-            'username' => env('DB_USERNAME', 'isaacoduh'),
-            'password' => env('DB_PASSWORD', 'isaac1993'),
+            'database' => env('DB_DATABASE', 'z8sra0i6y7exus71'),
+            'username' => env('DB_USERNAME', 'dlq0ccjlkpkybrye'),
+            'password' => env('DB_PASSWORD', 'a94vxhuk26wbsf69'),
             'unix_socket' => env('DB_SOCKET', ''),
             'charset' => 'utf8mb4',
             'collation' => 'utf8mb4_unicode_ci',
